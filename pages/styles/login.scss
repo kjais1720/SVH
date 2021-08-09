@@ -1,0 +1,123 @@
+@import '../../styles/generals';
+
+body{
+    // background: linear-gradient(45deg, $secondaryColor, $primaryColor);
+    background-color: $tertiaryColor;
+    min-height: 100vh;
+}
+main{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1008%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(217%2c 217%2c 217%2c 1)'%3e%3c/rect%3e%3cpath d='M -669.7823385628976%2c404 C -573.78%2c354.6 -381.78%2c158.6 -189.7823385628976%2c157 C 2.22%2c155.4 98.22%2c391.8 290.2176614371024%2c396 C 482.22%2c400.2 578.22%2c169.8 770.2176614371024%2c178 C 962.22%2c186.2 1116.26%2c418.2 1250.2176614371024%2c437 C 1384.17%2c455.8 1402.04%2c305 1440%2c272' stroke='rgba(0%2c 128%2c 128%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -898.6378751037885%2c326 C -802.64%2c302.8 -610.64%2c180.2 -418.6378751037884%2c210 C -226.64%2c239.8 -130.64%2c503.4 61.36212489621158%2c475 C 253.36%2c446.6 349.36%2c63.4 541.3621248962115%2c68 C 733.36%2c72.6 841.63%2c489 1021.3621248962115%2c498 C 1201.09%2c507 1356.27%2c190 1440%2c113' stroke='rgba(0%2c 128%2c 128%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -494.97727492119515%2c134 C -398.98%2c190.2 -206.98%2c387.6 -14.977274921195125%2c415 C 177.02%2c442.4 273.02%2c268.8 465.02272507880485%2c271 C 657.02%2c273.2 753.02%2c456.2 945.0227250788049%2c426 C 1137.02%2c395.8 1326.03%2c144.2 1425.0227250788048%2c120 C 1524.02%2c95.8 1437%2c268 1440%2c305' stroke='rgba(0%2c 128%2c 128%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -221.89623777643578%2c149 C -125.9%2c207.8 66.1%2c424.8 258.1037622235642%2c443 C 450.1%2c461.2 546.1%2c266.6 738.1037622235642%2c240 C 930.1%2c213.4 1026.1%2c343.2 1218.1037622235642%2c310 C 1410.1%2c276.8 1653.72%2c59.8 1698.1037622235642%2c74 C 1742.48%2c88.2 1491.62%2c319.6 1440%2c381' stroke='rgba(0%2c 128%2c 128%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1008'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background-size: cover;
+}
+.container{
+    background-color: rgb(85, 74, 74);
+    @include glassmorphism();
+    padding: 20px 40px;
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    margin: 10vh auto;
+    transform: translateX(40%);
+    color: $primaryColor;
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
+
+    &:hover{
+        box-shadow: 20px 20px 5px rgba(0,0,0,0.5);
+
+        img.login-icon{
+            box-shadow: -5px 20px 5px 0 rgba(0,0,0,0.5);
+        }
+    }
+
+    img.login-icon{
+        width: 80%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -75%;
+        // @include glassmorphism;
+        background: linear-gradient(45deg, $secondaryColor, $primaryColor);
+        border-radius: 10px 0 0 10px;
+
+        box-shadow: -5px 10px 5px 0 rgba(0,0,0,0.5);
+    }
+
+    .toggle{
+        display: flex;
+        margin: 20px auto;
+        justify-content: center;
+        
+        .toggle-btn{
+            // font-size: 1rem;
+            border: none;
+            color: $primaryColor;
+            background: #fff;
+        }
+        
+        .in{
+            padding: 10px;
+            border-radius: 20px 0 0 20px;            
+        }
+        
+        .up{
+            padding: 10px;
+            border-radius: 0 20px 20px 0;
+        }
+        .btn-focus{
+            background: linear-gradient(45deg, $secondaryColor, $primaryColor);
+            color: $tertiaryColor;
+        }
+    }
+
+    .social-btn{
+        border: none;
+        background: none;
+        margin: 20px 10px;
+        
+        .fab{
+            font-size: 1.2rem;
+            color: $secondaryColor;
+            cursor: pointer;
+
+            &:hover{
+                color: $primaryColor;
+                transform: scale(1.1);
+                transition: ease 0.1s;
+            }
+        }
+
+    }
+
+
+    
+    .hidden{
+        display: none;
+    }
+
+    @include mq(mobile){
+        transform: translateX(0);
+
+        img.login-icon{
+            position: relative;
+            top: unset;
+            left: unset;
+            width: 100%;
+            background: none ;
+            box-shadow: none;
+        }
+
+        &:hover{
+            img.login-icon{
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.footer{
+    $primaryColor: hsl(0,0%,85%);
+    $secondaryColor: hsl(180,100%,25%);
+    $tertiaryColor: hsl(234,71%,20%);
+}

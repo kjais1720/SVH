@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Vishnu Hardware | Checkout</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="styles/checkout.css">
+</head>
+<body>
+    <header>
+        <nav class="nav nav_top">
+            <a href="../index.html">
+                <div class="logo"><img src="../images/icon.png" alt=""><div>SVH <p>Estd. 1989</p></div>
+                </div>
+            </a>
+            
+            <ul class="nav-side">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li>  
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search Products">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </li>
+            </ul>
+            
+            <div id="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </nav>
+        
+    </header>
+    
+    <main>
+        
+        <div class="card-form-wrapper">
+            <h4 class="form-title">Payment Info</h4>
+            <form class="checkout-card-form">
+                <div class="single-input">
+                    <label>Cardholder Name</label>
+                    <div class="form-input form">
+                        <input type="text" required placeholder="Cardholder Name" autocomplete="off" autofocus>
+                    </div>
+                </div>
+                <div class="single-input">
+                    <label>Card Number</label>
+                    <div class="form-input form">
+                        <input id="credit-input" required type="text" placeholder="0000 0000 0000 0000">
+                        <img src="../images/card.png" alt="card">
+                    </div>
+                </div>
+                <div class="payment-card-info">
+                    <div class="single-input">
+                        <label>Expiration</label>
+                        <div class="expiration">
+                            <div class="form-input form">
+                                <input type="text" placeholder="MM" required>
+                            </div>
+                            <span>/</span>
+                            <div class="form-input form">
+                                <input type="text" placeholder="YYYY" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-input">
+                        <label>CVC/CVV <span><i class="mdi mdi-alert-circle"></i></span></label>
+                        <div class="form-input form">
+                            <input type="text" placeholder="***" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit" class="cta">PAY NOW</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="checkout-products">
+            <div class="checkout-sidebar-accordion checkout-sidebar-accordion-dark mt-50">
+                <div class="accordion" id="accordionDark">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <a href="javascript:void(0)" role="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Selected Products</a>
+                            <!-- <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Personal Details</a> -->
+                        </div>
+                        
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionDark">
+                            <div class="pdt-card">
+                                <div class="img"><img src="../images/Products/Dummy 1/1.png" alt=""></div>
+                                <div class="pdt-body">
+                                    <h5>Lorem Ipsum</h5>
+                                    <ul class="d-flex">
+                                        <li>CP</li>
+                                        <li>doler sit</li>
+                                        <li>1 × 4,999</li>
+                                    </ul>
+                                    <p>₹4,999</p>
+                                </div>
+                            </div>
+                            <div class="pdt-card">
+                                <div class="img"><img src="../images/Products/Dummy 1/2.png" alt=""></div>
+                                <div class="pdt-body">
+                                    <h5>Lorem Ipsum</h5>
+                                    <ul class="d-flex">
+                                        <li>CP</li>
+                                        <li>doler sit</li>
+                                        <li>1 × 4,999</li>
+                                    </ul>
+                                    <p>₹4,999</p>
+                                </div>
+                            </div>
+                            <div class="pdt-card">
+                                <div class="img"><img src="../images/Products/Dummy 1/3.png" alt=""></div>
+                                <div class="pdt-body">
+                                    <h5>Lorem Ipsum</h5>
+                                    <ul class="d-flex">
+                                        <li>CP</li>
+                                        <li>Doler sir</li>
+                                        <li>1 × 4,999</li>
+                                    </ul>
+                                    <p>₹4,999</p>
+                                </div>
+                            </div>
+                            <div class="pdt-card price-card">
+                                <ul>
+                                    <li><span>Subtotal Price</span><span>₹14,997</span></li>
+                                    <li><span>Delivery</span><span>+₹1,999</span></li>
+                                    <li><span>Discount</span><span>-₹1,000</span></li>
+                                </ul>
+                            </div>
+                            <div class="pdt-card price-card">
+                                <li><span>Total Price</span><span>₹15,996</span></li>
+                                <button class="cta">EDIT SHOPPING CART</button>
+                            </div>
+                            <!-- <div class="pdt-card">
+                                <div class="img"><img src="" alt=""></div>
+                                <div class="pdt-body">
+                                    <h5></h5>
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pdt-card">
+                                <div class="img"><img src="" alt=""></div>
+                                <div class="pdt-body">
+                                    <h5></h5>
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Personal Details</a>
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionDark">
+                            <div class="card-body">
+                                <div class="checkout-sidebar-details">
+                                    <div class="single-details">
+                                        <p class="info">Jhone Doe</p>
+                                        <p class="info">doejhon@email.com</p>
+                                        <p class="info">+123 456 789 0234</p>
+                                    </div>
+                                    <div class="single-details">
+                                        <h6 class="title">Mailing Address</h6>
+                                        <p class="info">Company Inc., 8901 Marmora Road, <br> Glasgow, D04 89GR.</p>
+                                    </div>
+                                    <div class="details-btn">
+                                        <a href="#" class="cta">Edit Information</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Shipping Address</a>
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionDark">
+                            <div class="card-body">
+                                <div class="checkout-sidebar-details">
+                                    <div class="single-details">
+                                        <p class="info">Jhone Doe</p>
+                                        <p class="info">doejhon@email.com</p>
+                                        <p class="info">+123 456 789 0234</p>
+                                    </div>
+                                    <div class="single-details">
+                                        <h6 class="title">Mailing Address</h6>
+                                        <p class="info">Company Inc., 8901 Marmora Road, <br> Glasgow, D04 89GR.</p>
+                                    </div>
+                                    <div class="details-btn">
+                                        <a href="#" class="cta">Edit Information</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </main>
+    
+    <section class="footer colored">
+        
+        <div class="business-info">
+            <div class="logo"><a href="../index.html"><img src="../images/icon.png" alt="Brand logo"><span>SVH <p>Estd. 1989</p></span></a>
+            </div>
+            <div class="address">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Opposite to Remand home, Saidnagar, Laheriasarai, Darbhanga, Bihar - 846001</p>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:jaiswalkrituraj20@gmail.com"><i class="fas fa-envelope"></i><p>shreevishnuhardware@gmail.com</p></a>
+                <a href="tel:+919123456789"><i class="fas fa-phone"></i><p>+91-9123456789</p></a>
+            </div>
+        </div>
+
+
+        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.37373778368!2d85.89293851439086!3d26.11935448347563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edb8f959d9ae4b%3A0xa80b626f4e633ceb!2sShree%20Vishnu%20Hardware!5e0!3m2!1sen!2sin!4v1622635419379!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+
+        <div class="copywright">©<div class="link"><a href="https://krituraj-anand.vercel.app" rel="noreferrer" target="_blank"><strong>Krituraj Anand</strong></a></div> 2021.</div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <script src="../vanilla-tilt.js"></script>
+    <script src="../utils.js"></script>
+    <script src="scripts/services.js"></script>
+    <script>
+        ScrollOut({threshold:0.4});
+        
+        </script>
+</body>
+</html>

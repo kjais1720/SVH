@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Vishnu Hardware | Login</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav class="nav nav_top">
+            <a href="../index.html">
+                <div class="logo"><img src="../images/icon.png" alt=""><div>SVH <p>Estd. 1989</p></div>
+                </div>
+            </a>
+        
+            <ul class="nav-side">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class='current'><a href="login.html"><i class="fas fa-user"></i></a></li>
+                <li><a href="checkout.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li>  
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search Products">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </li>
+            </ul>
+
+            <div id="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="container">
+            <img src='../images/undraw_secure_login_pdn4.svg' alt="A man opening a door" class="login-icon">
+            <div class="toggle">
+                <button class="in toggle-btn btn-focus">Login</button>
+                <button class="up toggle-btn">Sign-Up</button>
+            </div>
+            <form class="form" id="login" action="../index.html">
+                <p>Login with</p>
+                <button class="social-btn"><i class="fab fa-facebook"></i></button>
+                <button class="social-btn"><i class="fab fa-twitter"></i></button>
+                <button class="social-btn"><i class="fab fa-google"></i></button>
+                <p>or</p>
+
+                <div class="form-control">
+                    <input id="email" type="email" required autofocus autocomplete="off">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-control">
+                    <input id="password" type="Password" required>
+                    <label for="password">Password</label>
+                </div>
+
+                <p><a href="#">Forgot password?</a></p>
+                <button type="submit" class="btn btn-focus">Login</button>
+            </form>
+
+
+            <form action='../index.html' onsubmit="return validation()" name="sign-up" class="form hidden" id="signup">
+
+                <p>Sign-Up with</p>
+                <button class="social-btn"><i class="fab fa-facebook"></i></button>
+                <button class="social-btn"><i class="fab fa-twitter"></i></button>
+                <button class="social-btn"><i class="fab fa-google"></i></button>
+                <p>or</p>
+
+                <div class="form-control">
+                    <input id="name" name="Full Name" type="text" required autofocus autocomplete="off">
+                    <label for="name">Full Name</label>
+                </div>
+                <span id="errorname"></span>
+                <div class="form-control">
+                    <input name="Email" id="email" type="email" required autocomplete="off">
+                    <label for="email">Email</label>
+                </div>
+                <span id="erroremail"></span>
+                <div class="form-control">
+                    <input name='Password' id="password" type="Password" required>
+                    <label for="password">Password</label>
+                </div>
+                <span id="errorpassword"></span>
+                <div class="form-control">
+                    <input name="confPassword" id="re-password" type="Password" required>
+                    <label for="password">Confirm password</label>
+                </div>
+
+                <button type="submit" class="btn btn-focus">Sign-Up</button>
+            </form>
+        </div>
+    </main>
+
+    <section class="footer colored">
+        
+        <div class="business-info">
+            <div class="logo"><a href="../index.html"><img src="../images/icon.png" alt="Brand logo"><span>SVH <p>Estd. 1989</p></span></a>
+            </div>
+            <div class="address">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Opposite to Remand home, Saidnagar, Laheriasarai, Darbhanga, Bihar - 846001</p>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:jaiswalkrituraj20@gmail.com"><i class="fas fa-envelope"></i><p>shreevishnuhardware@gmail.com</p></a>
+                <a href="tel:+919123456789"><i class="fas fa-phone"></i><p>+91-9123456789</p></a>
+            </div>
+        </div>
+
+
+        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.37373778368!2d85.89293851439086!3d26.11935448347563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edb8f959d9ae4b%3A0xa80b626f4e633ceb!2sShree%20Vishnu%20Hardware!5e0!3m2!1sen!2sin!4v1622635419379!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+
+        <div class="copywright">©<div class="link"><a href="https://krituraj-anand.vercel.app" rel="noreferrer" target="_blank"><strong>Krituraj Anand</strong></a></div> 2021.</div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="../utils.js"></script>
+    <script src="./scripts/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+@import '../../styles/generals';
+
+//Scroll animation
+[data-scroll]{transition: all ease 1s;}
+
+[data-scroll = "in"]{
+    opacity: 1;
+    transform: scale(1);
+}
+
+[data-scroll="out"]{
+    opacity: 0;
+    transform: scale(0);
+}
+
+main{
+    min-height: 100vh;
+    .catalogue{
+        min-height: 100vh;
+       @include svgBg();
+        display: grid;
+        grid-template-columns: 20vw 1fr;
+
+
+        .product-container.active{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3vw;
+        }
+        .product-container{
+            display: none;
+
+            padding:$paddingVer $paddingHor;
+
+            .product-cards{
+                display: flex;
+                flex-direction: column;
+                // max-width: 250px;
+                @include glassmorphism();
+                background-color: rgba(0,0,0,0.1);
+                
+                // background-image: linear-gradient(to right, $primaryColor, $secondaryColor) ;
+                color: $primaryColor;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+                .img img{
+                    width: 100%;
+                }
+
+                .card-body{
+                    a{
+                        text-decoration: none;
+
+                        &:hover{
+                            color: $secondaryColor;
+                        }
+                    }
+                    h2{
+                        color: $primaryColor;
+                    }
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 20px;
+
+                }
+
+                &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                    &[data-scroll = "in"]{
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+        
+                    &[data-scroll="out"]{
+                        opacity: 1;
+                        transform: scale(1);
+                    }    
+                }
+            }           
+        }
+        
+        @include mq(mobile){
+            grid-template-columns: 1fr;
+            padding: 2vh 8vw;
+            aside{
+                position: fixed;
+                bottom: 3vh;
+                right: 3vw;
+                z-index: 99;
+                @include centring-content();
+                
+                .aside-btn{
+                    display: none;
+                }
+                .fas.fa-bars{
+                    display: block;
+                }
+                .fas.fa-times{
+                    display: none;
+                }
+                .panel-toggle{
+                    display: block;
+                    width: fit-content;
+                    color: $secondaryColor;
+                    font-size: 1.2rem;
+                    border-radius: 10px;
+                    
+                }
+                
+                &.active{
+                    .aside-btn{
+                        display: flex;
+                        flex-direction: column;
+                        // gap: 5px;
+                        min-width: 100px;
+                        
+                        button{
+                            border-radius: 0;
+                            // border-bottom: solid 2px $primaryColor;
+                        }
+                    }
+                    
+                    .fas.fa-bars{
+                        display: none;
+                    }
+                    
+                    .fas.fa-times{
+                        display: block;
+                    }
+                }
+            }
+            
+            .product-container.active{
+                grid-template-columns: 1fr;}
+            }
+    
+        }
+        
+        @include mq(tablet){
+            .product-container{
+                grid-template-columns: 1fr 1fr;
+
+                .product-cards{
+
+                }
+
+            }
+        }
+}
+
+

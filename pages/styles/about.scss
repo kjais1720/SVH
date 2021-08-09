@@ -1,0 +1,53 @@
+@import '../../styles/generals';
+main{
+    padding: $paddingVer $paddingHor;
+    article{
+        margin: $paddingVer auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10%;
+
+        img{
+            box-shadow: $box-shadow;
+            border-radius: 15px;
+            width: 100%;
+        }
+
+        .article-text{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: start;
+            justify-content: flex-start;
+
+            h2{
+                color: $primaryColor;
+            }
+            p{
+                color: $textSecondary;
+            }
+        }
+
+    }
+
+    hr{
+        margin: auto;
+        width: 50%;
+        border: none;
+        border-top: dotted 5px $primaryColor;
+    }
+
+    @include mq(mobile){
+        article{
+            grid-template-columns: 1fr ;
+            grid-template-rows: 1fr 1fr;
+            .article-img{
+                grid-row: 1/2;
+            }
+            .article-text{
+                grid-row: 2/3;
+            }
+            gap: 40px;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+@import '../../styles/generals';
+
+main{
+    padding: $paddingVer $paddingHor $paddingVer 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 20vw 1fr;
+    gap: $paddingHor;
+    @include svgBg();
+    
+    .main-contents{
+        padding: $paddingVer $paddingHor;
+        width: 100%;
+        text-align: center;
+        @include glassmorphism();
+        background: rgba(0,0,0,0.1);
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+        border-radius: 15px;
+        font-family: inherit;
+        h1{
+            @include text-gradient();
+            margin: 30px auto;
+        }
+        form{
+           display: none; 
+        }
+        form.active{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            color: $primaryColor;
+       }
+        .form-section{
+            display: grid;
+            justify-content: start;
+            grid-template-columns: 40% 60%;
+            width: 100%;
+            justify-items: start;
+
+            .inputs{
+                display: flex;
+                justify-content: start;
+                gap: 40px;
+
+                div{
+                    display: flex;
+                    gap: 10px;
+
+                    input{
+                        margin: 0;
+                        border: solid 5px red;
+                        display: inline;
+                        width: fit-content;
+                    }
+                }
+            }
+
+            button.cta{
+                font-size: 1.2rem;
+                padding: 15px;
+            }
+
+        }
+
+        .form-control{
+            input{
+                width: 100%;
+            }
+            label{
+                top: 50px;
+                display: flex;
+            }
+            input:focus + label span{
+                transform: translateY(-35px);
+            }
+        }
+    }
+
+    @include mq(mobile){
+        grid-template-columns: 1fr;
+        padding: 5vh;
+        .main-contents{
+            form{
+                gap: 50px;
+                h3{
+                    text-align: left;
+                }
+                .form-section{
+                    .inputs{
+                        flex-direction: column;
+                        gap: 10px;
+
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Vishnu Hardware | Services</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" href="../images/icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles/services.css">
+</head>
+<body>
+    <header>
+        <nav class="nav nav_top">
+            <a href="../index.html">
+                <div class="logo"><img src="../images/icon.png" alt=""><div>SVH <p>Estd. 1989</p></div>
+                </div>
+            </a>
+        
+            <ul class="nav-side">
+                <li class="current"><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+                <li><a href="checkout.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li>  
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search Products">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </li>
+            </ul>
+
+            <div id="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </nav>
+
+    </header>
+    <div class="hero">
+        <h1>Submersible Boring</h1>
+    </div>
+    <main>
+        <aside data-scroll class="active">
+            <div class="aside-btn">
+                <button onclick= "changeActive('submersible')" class='submersible active'>Submersible Boring</button>
+                <button onclick= "changeActive('handpump')" class='handpump'>Handpump Boring</button>
+                <button onclick= "changeActive('plumbing')" class='plumbing'>Plumbing</button>
+            </div>
+            <div class="panel-toggle"><button class="fas fa-bars"></button><button class="fas fa-times"></button></div>
+        </aside>
+        <div class="main-contents">
+            <form action="checkout.html" id="submersible" class="active">
+
+                <div class="form-section">
+                    <h3>Type of Boring</h3>
+                    <div class="inputs">
+                        <div>
+                            <label for="typeofB1">
+                            <input type="radio" name="type-of-boring" id="typeofB1">
+                            Manual</label>
+                        </div>
+                        <div>
+                            <label for="typeofB2">
+                            <input type="radio" name="type-of-boring" id="typeofB2">
+                            Boring machine</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <h3>Motor Brand</h3>
+                    <div class="inputs">
+                        <div>
+                            <label><input type="radio" name="brand"> <span>Crompton</span></label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="brand">
+                            CRI</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="brand">
+                            Havells</label>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="form-section">
+                    <h3>Casing Pipes Brand</h3>
+                    <div class="inputs">
+                        <div>
+                            <label>
+                            <input type="radio" name="cpBrand">
+                            Ashirvad</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="cpBrand">
+                            Shiva</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="cpBrand">
+                            Finolex</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <h3>Boring Depth</h3>
+                    <div class="inputs">
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            160-170</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            170-180</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            180-190</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            190-200</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            200-210</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Pipes Combination</h3>
+                    <div class="inputs">
+                        <div>
+                            <label>
+                            <input type="radio" name="combo">
+                            5" - 2"</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="combo">
+                            4" - 2"</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="combo">
+                            4" - 1.5"</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section form-control">
+                    <input id="remark" type="text"autocomplete="off">
+                    <label for="remark">Additional remarks</label>
+                </div>
+
+                <div class="form-section">
+                    <button type="submit" class="cta">Proceed</button>
+                </div>
+
+            </form>
+
+            <form action="checkout.html" id="handpump">
+
+                <div class="form-section">
+                    <h3>Type of Boring</h3>
+                    <div class="inputs">
+                        <div>
+                            <label for="typeofB1">
+                            <input type="radio" name="type-of-boring" id="typeofB1">
+                            Manual</label>
+                        </div>
+                        <div>
+                            <label for="typeofB2">
+                            <input type="radio" name="type-of-boring" id="typeofB2">
+                            Boring machine</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <h3>Handpump</h3>
+                    <div class="inputs">
+                        <div>
+                            <label><input type="radio" name="typeOfHandpump">Singhur</label>
+                        </div>
+                        <div>
+                            <label><input type="radio" name="typeOfHandpump">Classic</label>
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="form-section">
+                    <h3>PVC Pipes Brand</h3>
+                    <div class="inputs">
+                        <div>
+                            <label>
+                            <input type="radio" name="ppBrand">Finolex</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="ppBrand">Ashirvad</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="ppBrand">Shiva</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Iron Pipe Brand</h3>
+                    <div class="inputs">
+                        <div>
+                            <label>
+                            <input type="radio" name="combo">Tata</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="combo">BST</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="combo">Jindal</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Boring Depth</h3>
+                    <div class="inputs">
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            160-170</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            170-180</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            180-190</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            190-200</label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="depth">
+                            200-210</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-control form-section">
+                    <input id="remark" type="text"autocomplete="off">
+                    <label for="remark">Additional remarks</label>
+                </div>
+
+                <div class="form-section">
+                    <button type="submit" class="cta">Proceed</button>
+                </div>
+
+            </form>
+
+            <form action="checkout.html" id='plumbing'>
+                <div class="form-section">
+                    <h3>Type of Plumbing</h3>
+                    <div class="inputs">
+                        <div>
+                            <label for="typeofB1">
+                            <input type="radio" name="type-of-boring" id="typeofB1">
+                            Fixing/Repairing</label>
+                        </div>
+                        <div>
+                            <label for="typeofB2">
+                            <input type="radio" name="type-of-boring" id="typeofB2">
+                            Water Connection</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-control form-section">
+                    <input id="remark" type="text"autocomplete="off">
+                    <label for="remark">Address line 1</label>
+                </div>
+                <div class="form-control form-section">
+                    <input id="remark" type="text"autocomplete="off">
+                    <label for="remark">Address line 2</label>
+                </div>
+                <div class="form-control form-section">
+                    <input id="remark" type="text"autocomplete="off">
+                    <label for="remark">Pin code</label>
+                </div>
+                <div class="form-control form-section">
+                    <input id="remark" type="text"autocomplete="off">
+                    <label for="remark">Additional remarks</label>
+                </div>
+                <div class="form-section">
+                    <button type="submit" class="cta">Proceed</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <section class="footer colored">
+        
+        <div class="business-info">
+            <div class="logo"><a href="../index.html"><img src="../images/icon.png" alt="Brand logo"><span>SVH <p>Estd. 1989</p></span></a>
+            </div>
+            <div class="address">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Opposite to Remand home, Saidnagar, Laheriasarai, Darbhanga, Bihar - 846001</p>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:jaiswalkrituraj20@gmail.com"><i class="fas fa-envelope"></i><p>shreevishnuhardware@gmail.com</p></a>
+                <a href="tel:+919123456789"><i class="fas fa-phone"></i><p>+91-9123456789</p></a>
+            </div>
+        </div>
+
+
+        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.37373778368!2d85.89293851439086!3d26.11935448347563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edb8f959d9ae4b%3A0xa80b626f4e633ceb!2sShree%20Vishnu%20Hardware!5e0!3m2!1sen!2sin!4v1622635419379!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+
+        <div class="copywright">©<div class="link"><a href="https://krituraj-anand.vercel.app" rel="noreferrer" target="_blank"><strong>Krituraj Anand</strong></a></div> 2021.</div>
+    </section>
+
+    <script src="../utils.js"></script>
+    <script src="scripts/services.js"></script>
+
+</body>
+</html>

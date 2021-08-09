@@ -1,0 +1,491 @@
+@import 'generals';
+
+// Main section
+
+.main-content{
+    width: 100%;
+    min-height: 80vh;
+    padding: $paddingVer 25vw;
+    text-align: center;
+    position: relative;
+    text-shadow: $box-shadow;
+    font-size: 20px;
+ 
+    
+    .slide{
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        text-align: left;
+        vertical-align: middle;
+        color: $tertiaryColor;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 5vw 10vw;
+        transition: all ease 0.9s;
+        transform: translateX(-100%);
+        opacity: 0;
+
+        :is(h1,p){
+            position: relative;
+            z-index: 2;
+            max-width: 50ch;
+        }
+
+        &:nth-child(1){
+            @include background(311)
+        }
+
+        &:nth-child(2){
+            @include background(278)
+        }
+        
+        &:nth-child(3){
+            @include background(211)
+        
+        }
+
+        
+        
+        @include overlay($primaryColor)
+    }
+    .slide.active{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .slide-btn{
+        position: absolute;
+        z-index: 90;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        cursor: pointer;
+
+        i{
+            color: $tertiaryColor;
+            font-size: 1.3rem;
+        }
+
+    }
+
+    .slide-btn.prev{
+        left: unset;
+        right: 5%;
+    }
+
+    .slide-jump-btn{
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        div{
+            width: 15px;
+            height: 15px;
+            background-image: radial-gradient(circle, $tertiaryColor 50%, transparent 50%);
+            padding: 2px;
+            border: solid 2px $tertiaryColor;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all ease 0.9s;
+        }
+
+        div.active{
+            background-image: radial-gradient(circle, $secondaryColor 50%, transparent 50%);
+            border-color: $secondaryColor;
+        }
+    }
+
+
+
+
+    h2{
+        position: relative;
+        z-index: 2;
+    }
+
+    span{
+        position: relative;
+        z-index: 2;
+        opacity: 0.8;
+        line-height: 1.5;
+
+    }
+
+    @include mq(mobile){
+        padding: $paddingVer 10vw ;
+        gap: 5vw;
+    }
+
+}
+
+.services{
+    min-height: 80vh;
+    padding: $paddingVer $paddingHor;
+    // background: $primaryColor;
+
+    .card-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 10%;
+        margin-top: $paddingVer;
+        margin-top: 5%;
+
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 3rem;
+            gap: 30px;
+            border-radius: 10px;
+            box-shadow: $box-shadow;
+            background-color: transparent;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            // border: solid 3px $secondaryColor;
+            transition: all ease 0.5s;
+
+            &::before{
+                @include overlay($primaryColor);
+                background-color: $tertiaryColor;
+                opacity: 0.3;
+                border-radius: 10px;
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0; bottom: 0; left: 0;
+                width: 0px;
+                background-color: $primaryColor;
+                border-radius:10px;
+                z-index: -3;
+                transition: width ease 0.5s;
+                opacity: 0.4;
+            }
+
+            &:hover{
+                transform: rotate(-5deg);
+                box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.8) ;
+                box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.8) ;
+                &::after{
+                    width: 100%;
+                }
+            }
+
+            &:nth-child(1){
+                @include background(172);
+            }
+
+            &:nth-child(2){
+                @include background(231);
+            }
+            &:nth-child(3){
+                @include background(330);
+            }
+
+            h3{
+                font-size: 2rem;
+                @include text-gradient();
+                position: relative;
+                z-index: 3;
+
+            }
+
+            p{
+                font-weight: 500;
+                text-align: center;
+                color: $tertiaryColor;
+                position: relative;
+                z-index: 2;
+            }
+
+            .btn{
+                width: 80%;
+                padding: 1rem;
+                text-align: center;
+                a{
+                    text-decoration: none;
+                    color: $tertiaryColor;
+                    transition: all ease .5s;
+
+                    &:hover{
+                        letter-spacing: 2px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @include mq(mobile){
+        padding: 10vh 10vw;
+        .card-container{
+            flex-direction: column;
+            gap: 7vh;
+        }
+    }
+}
+
+// Products Section
+
+.products{
+    padding : $paddingVer $paddingHor ;
+    min-height: 80vh;
+    background-color: $tertiaryColor;
+    position: relative;
+    display: flex;flex-direction: column; justify-content: center;align-items: center;
+    
+    h2{
+        position: absolute;
+        top: 5%;
+        
+        @include text-gradient();
+    }
+    
+    .card-container{
+        text-align: center;
+        width: 100%;
+        display: flex;
+        // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 9%;
+        margin-top: $paddingVer;
+        a{
+            .card{
+                background-size: cover;
+                background-size: cover;
+                transition: all ease 1s ;
+
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+            &:nth-child(1) .card{
+                background-image: url('https://www.jaquar.com/Themes/JaquarNew/Content/images/bath-solution.jpg');
+            }
+            &:nth-child(2) .card{
+                background-image: url('../images/Products/Pipes/64194-6828321.jpg');
+            }
+            &:nth-child(3) .card{
+                background-image: url('https://www.jaquar.com/Themes/JaquarNew/Content/images/bath-solution.jpg');
+            }
+            &:nth-child(4) .card{
+                background-image: url('https://prayagindia.com/wp-content/uploads/2020/10/Pipes.jpg');
+            }
+        }
+
+        .card{
+            backdrop-filter: blur(5px);
+            height: 200px;
+            width: 200px;
+            @include centring-content();
+            border-radius: 10px;
+            background-size: contain ;
+            // background: $primaryColor;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+            transition: all ease 0.3s;
+            color: #fff;
+
+            @include overlay($primaryColor);
+            &::before{
+                opacity: 0.4;
+                border-radius:10px;
+            }
+            
+        }
+    }
+
+    @include mq(mobile){
+        h2{
+            position: relative;
+        }
+        .card-container{
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+
+}
+
+//About
+
+
+.about{
+    padding: $paddingVer $paddingHor;
+    min-height: 80vh;
+    background-color: $tertiaryColor;
+    position: relative;
+
+
+    h1{
+        text-align: center;
+        margin: 0 auto 30px;
+    }
+    
+    .about-content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        gap: 20px;
+        
+        .left-col{
+            align-self: center;
+            img{
+                width: 100%;
+                border-radius: 0 50px 0 50px;
+            }
+        }
+        
+        .right-col{
+            padding: $paddingVer 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            gap: 30px;
+            h2{
+                // font-size: 2rem;
+                // font-size: 2rem;
+                position: relative;
+                z-index: 3;
+            }
+            p{
+                font-weight: 500;
+                text-align: left;
+                color: $tertiaryColor;
+                position: relative;
+                z-index: 2;
+            }
+            }
+            button{
+                border-radius: 15px;
+                border: solid 1px $tertiaryColor;
+                background-color: transparent;
+                padding: 10px;
+                a{
+                    color: $tertiaryColor;
+                }
+
+                &:hover{
+                    background-color: $primaryColor;
+                }
+        }
+    }
+
+    @include mq(mobile){
+        .about-content{
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            justify-items: center;
+            .left-col{
+                grid-row: 1/2;
+            }
+    
+            .right-col{
+                grid-row: 2/3;
+            }
+        }
+    }
+    
+}
+
+
+//Download Section
+
+.download{
+    padding: $paddingVer $paddingHor;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+
+    .left-col{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+        h1{
+            font-size: 3rem;
+            text-align: center;
+            color: $primaryColor;
+        }
+
+        .download-btn{
+            display: flex;
+            gap: 20px;
+            button{
+                border: solid 1px transparent;
+                color: $tertiaryColor;
+                background-color: $primaryColor;
+                padding: 20px;
+                border-radius: 0 20px 0 20px;
+                box-shadow: $box-shadow;
+                font-size: 1.5rem;
+
+                &:hover{
+                    background-color: $tertiaryColor;
+                    @include text-gradient();
+                    border: solid 1px $primaryColor;
+                }
+
+                &:nth-child(2){
+                    background-color: $tertiaryColor;
+                    @include text-gradient();
+                    border: solid 1px $primaryColor;
+
+                    &:hover{
+                        border: solid 1px transparent;
+                        color: $tertiaryColor;
+                        background-color: $primaryColor;                
+                    }
+                }
+            }
+        }
+    }
+
+    .right-col{
+        img{
+            position: relative;
+            z-index: 90;
+            transform: scale(1.2) rotate(15deg);
+            // box-shadow: $box-shadow;
+        }
+    }
+
+    @include mq(mobile){
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        .left-col{
+            grid-row: 2/3;
+        }
+
+        .right-col{
+            text-align: center;
+            grid-row: 1/2;
+            img{
+                transform: scale(1) rotate(0deg);
+            }
+        }
+    }
+}
+
+@keyframes shake {
+    from{
+        transform: rotate(-5deg);
+    }
+    to{
+        transform: rotate(5deg);
+    }
+}
