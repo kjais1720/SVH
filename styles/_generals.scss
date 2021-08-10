@@ -272,17 +272,18 @@ header{
                 color: $secondaryColor;
                 font-family: 'Playfair Display';
                 font-weight: bold;
+                display: flex;
+                flex-direction: column;
+                
             
 
                 p{
                     color: $primaryColor;
                     font-size: 0.6rem;
                     font-family: 'Playfair Display';
-                    position: absolute;
-                    top: 27px;
-                    left:0px;
                 }
             }
+
         }
 
         .search-bar{
@@ -384,13 +385,7 @@ header{
                 }
 
                 div{
-                    font-size: 1.5rem;
-
-                    p{
-                        font-size: 0.6rem;
-                        top: unset;
-
-                    }
+                    font-size: 1.2rem;
                 }
             }
 
