@@ -546,7 +546,8 @@ header{
         display: flex;
         justify-content: start;
         flex-direction: column;
-        align-items: center;
+        // align-items: center;
+        width: 25%;
         gap: 30px;
         .logo{
             width: max-content;
@@ -634,9 +635,9 @@ header{
             width: 100%;
         }
 
-        // .business-info{
-        //     transform: translateX(-30%);
-        // }
+        .business-info{
+            width: unset;
+        }
 
     }
     
@@ -651,6 +652,7 @@ header{
         transform: translateX(-50%);
         text-align: center;
         color: #fff;
+        font-size: 0.8rem;
         
         .link{
             background-color: $tertiaryColor;
@@ -675,6 +677,7 @@ aside{
     flex-direction: column;
     gap: 10px;
     padding: $paddingVer 0;
+    background-color: transparent;
     
     .panel-toggle{
         display: none;
@@ -699,13 +702,16 @@ aside{
 }
 
 @include mq(mobile){
+
     aside{
         position: fixed;
         bottom: 3vh;
         right: 3vw;
         z-index: 99;
+        @include centring-content();
         
         .aside-btn{
+            background-color: #fff;
             display: none;
         }
         .fas.fa-bars{
@@ -716,31 +722,38 @@ aside{
         }
         .panel-toggle{
             display: block;
+            width: fit-content;
             color: $secondaryColor;
             font-size: 1.2rem;
             border-radius: 10px;
-            
+
             .fas{
                 padding: 10px;
                 border-radius: 20px;
                 color: $tertiaryColor;
                 background-color: $primaryColor;
             }
+            
         }
         
         &.active{
             .aside-btn{
                 display: flex;
                 flex-direction: column;
-                // gap: 5px;
                 min-width: 100px;
                 
                 button{
                     border-radius: 0;
                 }
+
+                button:first-child{
+                    border-radius: 10px 10px 0 0;
+                }
+                button:last-child{
+                    border-radius: 0 0 10px 10px;
+                }
             }
             
-
             .fas.fa-bars{
                 display: none;
             }
@@ -765,5 +778,11 @@ aside{
     h1{
         font-weight: 200;
         font-size: 2.5rem;
+    }
+
+    @include mq(mobile){
+        h1{
+            text-align: center;
+        }
     }
 }

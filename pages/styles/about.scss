@@ -40,7 +40,7 @@ main{
     @include mq(mobile){
         article{
             grid-template-columns: 1fr ;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: auto 1fr;
             .article-img{
                 grid-row: 1/2;
             }

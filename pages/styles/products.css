@@ -506,9 +506,7 @@ header .nav #nav-icon {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 25%;
   gap: 30px;
 }
 
@@ -621,6 +619,9 @@ header .nav #nav-icon {
   .footer .map iframe {
     width: 100%;
   }
+  .footer .business-info {
+    width: unset;
+  }
 }
 
 .footer .copywright {
@@ -638,6 +639,7 @@ header .nav #nav-icon {
           transform: translateX(-50%);
   text-align: center;
   color: #fff;
+  font-size: 0.8rem;
 }
 
 .footer .copywright .link {
@@ -671,6 +673,7 @@ aside {
           flex-direction: column;
   gap: 10px;
   padding: 5vh 0;
+  background-color: transparent;
 }
 
 aside .panel-toggle {
@@ -710,8 +713,18 @@ aside .aside-btn button:last-child {
     bottom: 3vh;
     right: 3vw;
     z-index: 99;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   aside .aside-btn {
+    background-color: #fff;
     display: none;
   }
   aside .fas.fa-bars {
@@ -722,6 +735,9 @@ aside .aside-btn button:last-child {
   }
   aside .panel-toggle {
     display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     color: teal;
     font-size: 1.2rem;
     border-radius: 10px;
@@ -744,6 +760,12 @@ aside .aside-btn button:last-child {
   }
   aside.active .aside-btn button {
     border-radius: 0;
+  }
+  aside.active .aside-btn button:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+  aside.active .aside-btn button:last-child {
+    border-radius: 0 0 10px 10px;
   }
   aside.active .fas.fa-bars {
     display: none;
@@ -774,6 +796,12 @@ aside .aside-btn button:last-child {
 .hero h1 {
   font-weight: 200;
   font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 650px) {
+  .hero h1 {
+    text-align: center;
+  }
 }
 
 [data-scroll] {
@@ -867,6 +895,7 @@ main .catalogue .product-container .product-cards .card-body a:hover {
 }
 
 main .catalogue .product-container .product-cards .card-body h2 {
+  text-align: left;
   color: #0f1657;
 }
 
@@ -886,68 +915,26 @@ main .catalogue .product-container .product-cards:nth-child(1)[data-scroll="out"
   main .catalogue {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    padding: 2vh 8vw;
-  }
-  main .catalogue aside {
-    position: fixed;
-    bottom: 3vh;
-    right: 3vw;
-    z-index: 99;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  main .catalogue aside .aside-btn {
-    display: none;
-  }
-  main .catalogue aside .fas.fa-bars {
-    display: block;
-  }
-  main .catalogue aside .fas.fa-times {
-    display: none;
-  }
-  main .catalogue aside .panel-toggle {
-    display: block;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    color: teal;
-    font-size: 1.2rem;
-    border-radius: 10px;
-  }
-  main .catalogue aside.active .aside-btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    min-width: 100px;
-  }
-  main .catalogue aside.active .aside-btn button {
-    border-radius: 0;
-  }
-  main .catalogue aside.active .fas.fa-bars {
-    display: none;
-  }
-  main .catalogue aside.active .fas.fa-times {
-    display: block;
+    padding: 5vh 5vw;
   }
   main .catalogue .product-container.active {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  main .catalogue .product-container .product-cards:nth-child(2)[data-scroll="in"], main .catalogue .product-container .product-cards:nth-child(3)[data-scroll="in"] {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  main .catalogue .product-container .product-cards:nth-child(2)[data-scroll="out"], main .catalogue .product-container .product-cards:nth-child(3)[data-scroll="out"] {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
 }
 
 @media only screen and (min-width: 650px) and (max-width: 1024px) {
-  main .product-container {
+  main .catalogue .product-container {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }

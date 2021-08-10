@@ -80,11 +80,12 @@ main{
 
     @include mq(mobile){
         grid-template-columns: 1fr;
-        padding: 5vh;
+        padding: 20px;
         .main-contents{
             form{
                 gap: 50px;
                 h3{
+                    font-size: 1rem;
                     text-align: left;
                 }
                 .form-section{
@@ -94,8 +95,13 @@ main{
 
                     }
                 }
+
+                .form-control{
+                grid-template-columns: 1fr;
+                }
             }
         }
+
     }
 
 }

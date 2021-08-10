@@ -338,7 +338,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
-        gap: 20px;
         
         .left-col{
             align-self: center;
@@ -356,8 +355,6 @@
             align-items: start;
             gap: 30px;
             h2{
-                // font-size: 2rem;
-                // font-size: 2rem;
                 position: relative;
                 z-index: 3;
             }
@@ -387,13 +384,15 @@
     @include mq(mobile){
         .about-content{
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: auto auto;
             justify-items: center;
             .left-col{
                 grid-row: 1/2;
             }
     
             .right-col{
+                padding: 0;
+                align-items: center;
                 grid-row: 2/3;
             }
         }
@@ -467,14 +466,28 @@
     @include mq(mobile){
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
+        width: 100%;
+        overflow: hidden;
+        gap: 3%;
         .left-col{
+            width: 100%;
             grid-row: 2/3;
+            h1{
+                font-size: 2rem;
+                width: 100%;
+            }
+            .download-btn button{
+                font-size: 1rem;
+            }
         }
 
         .right-col{
+            width: 100%;
+            
             text-align: center;
             grid-row: 1/2;
             img{
+                width: 100%;
                 transform: scale(1) rotate(0deg);
             }
         }

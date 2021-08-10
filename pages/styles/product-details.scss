@@ -121,5 +121,13 @@ main{
             width: 100%;
             padding: $paddingVer $paddingHor 10vh;
         }
+        .right-col{
+            .cta-buttons{
+                button{
+                    font-size: unset;
+                    padding: 10px;
+                }
+            }
+        }
     }
 }
