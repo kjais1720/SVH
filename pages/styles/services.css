@@ -165,8 +165,14 @@ p a:hover {
   transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
 }
 
-input:focus + label span,
-input:valid + label span {
+input[data-filled="true"] + label span {
+  color: #0f1657;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+input[data-filled='false']:focus + label span,
+input[data-filled='false']:valid + label span {
   color: #0f1657;
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
@@ -294,38 +300,6 @@ header .nav li a {
 header .nav li a:hover {
   padding-bottom: 5px;
   border-bottom: solid 3px #0f1657;
-}
-
-header .nav li.current {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-}
-
-header .nav li.current::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  bottom: -10px;
-  left: -10px;
-  right: -10px;
-  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-  background-color: #0f1657;
-}
-
-header .nav li.current a {
-  position: relative;
-  z-index: 99;
-  color: #d9d9d9;
 }
 
 header .nav li .cta-nav.login {
@@ -874,6 +848,11 @@ main .main-contents .form-section {
       grid-template-columns: 40% 60%;
   width: 100%;
   justify-items: start;
+  position: relative;
+}
+
+main .main-contents .form-section h3 {
+  text-align: left;
 }
 
 main .main-contents .form-section .inputs {
@@ -883,7 +862,11 @@ main .main-contents .form-section .inputs {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  gap: 40px;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  row-gap: 15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main .main-contents .form-section .inputs div {
@@ -905,6 +888,11 @@ main .main-contents .form-section .inputs div input {
 main .main-contents .form-section button.cta {
   font-size: 1.2rem;
   padding: 15px;
+}
+
+main .main-contents .form-control {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
 main .main-contents .form-control input {

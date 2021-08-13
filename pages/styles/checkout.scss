@@ -22,12 +22,11 @@ main{
         
             h4{
                 text-align: center;
-            border: none;
-            border-bottom: solid 1px $primaryColor;
-            padding: 20px;
-            color: $primaryColor;
-            
-        }
+                border: none;
+                border-bottom: solid 1px $primaryColor;
+                padding: 20px;
+                color: $primaryColor;
+            }
         
         form.checkout-card-form{
             width: 100%;

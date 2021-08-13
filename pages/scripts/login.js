@@ -1,10 +1,18 @@
-
-
 const loginForm = $('#login');
 const signupForm = $('#signup');
 const loginButton = $('.in');
 const signupButton = $('.up');
+const inputs = $('.form-control input');
 
+inputs.click(()=>{
+    console.log($(this).value)
+    if($(this).value===''){
+        $(this).attr('data-filled','false');
+    }
+    else{
+        $(this).attr('data-filled','true');
+    }
+})
 
 //add event listener to login button to change toggle the class 'hidden', on click
 signupButton.click(()=>{
@@ -52,11 +60,6 @@ function validation(){
         return false
     }
 }
-
-
-// form.submit(e=>{
-//    var check= validation()
-// })
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzqh6znP9RuRN_fMGgxO-xuJOKmfIJHijn3GmuB3SuC84zz8uIL1kVQrjTEf_Szyz7k/exec'
 
